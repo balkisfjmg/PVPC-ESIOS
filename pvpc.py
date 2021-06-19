@@ -20,11 +20,11 @@ import sys
 
 # Configurar geolocalizacion del precio Mediande el GeoID: 8741 - Peninsula, 8742 - Canarias, 8743 - Baleares, 8744 - Ceuta, 8745 - Melilla
 migeoid = 8741
-
+mitoken = "a4932590d207a449c4d62a072c716c157c6dd2f9ebfc572b6b0f44b0db309f74"
 
 ## PREPARAR LA LLAMADA A LA API
 url = 'https://api.esios.ree.es/indicators/1001'
-headers = {'Accept':'application/json; application/vnd.esios-api-v2+json','Content-Type':'application/json','Host':'api.esios.ree.es','Authorization':'Token token=\"MITOKEN\"'}
+headers = {'Accept':'application/json; application/vnd.esios-api-v2+json','Content-Type':'application/json','Host':'api.esios.ree.es','Authorization':'Token token="\a4932590d207a449c4d62a072c716c157c6dd2f9ebfc572b6b0f44b0db309f74\"'}
 
 ## HACER LA PETICION
 response = requests.get(url, headers=headers)
