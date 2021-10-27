@@ -23,12 +23,13 @@ migeoid = 8741
 
 
 ## PREPARAR LA LLAMADA A LA API
-url = 'https://api.esios.ree.es/indicators/1001'
+## url = 'https://api.esios.ree.es/indicators/1001'
+url = 'https://api.esios.ree.es/indicators/1390'
+
 headers = {'Accept':'application/json; application/vnd.esios-api-v2+json','Content-Type':'application/json','Host':'api.esios.ree.es','Authorization':'Token token=\"a4932590d207a449c4d62a072c716c157c6dd2f9ebfc572b6b0f44b0db309f74\"'}
 
 ## HACER LA PETICION
 response = requests.get(url, headers=headers)
-
 ## Si la respuesta desde la web de ESIOS es 200 (OK)
 if response.status_code == 200:
 
@@ -79,3 +80,4 @@ if response.status_code == 200:
 
   ## Imprimir la info por consola en formato JSON
   print ('{\"Actual\":' + str(valor_act) + ',\"Maximo\":' + str(valor_max) + ',\"Minimo\":' + str(valor_min) + ',\"Media\":' + str(valor_med) + ',\"BajoMedia\":' + str(bajomedia).lower() + ',\"ProximaBM\":\"' + proximahorabm.isoformat() + '\",\"HorasBM\":' + str(itemsbajomedia) + '}')
+  print (str(response.content))
